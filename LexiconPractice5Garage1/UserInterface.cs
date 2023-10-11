@@ -358,9 +358,15 @@ namespace LexiconPractice5Garage1
             {
                 Console.Write("Registration number: ");
                 input = Console.ReadLine().ToUpper();
+                Vehicle vehicle = garageHandler.FindVehicleByRegistrationNumber(input.ToUpper());
                 verifyRegistrationNumber = VerifyRegNum(input);
                 if (!verifyRegistrationNumber)
                     Console.WriteLine($"'{input}' is not a valid registration number.");
+                else if (vehicle != null)
+                {
+                    Console.WriteLine($"The vehicle with the '{input}' registration number is already in the garage.");
+                    verifyRegistrationNumber = false;
+                }
             } while (!verifyRegistrationNumber);
             regNum = input;
 
