@@ -16,5 +16,13 @@
         {
             return $"{base.ToString()}\nCylinder Volume: {CylinderVolume}";
         }
+
+        public override bool CompareWith(string keyword)
+        {
+            if (base.CompareWith(keyword) || CylinderVolume.ToString() == keyword)
+                return true;
+
+            return false;
+        }
     }
 }

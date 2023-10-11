@@ -17,6 +17,14 @@
         {
             return $"{base.ToString()}\nFuel Type: {FuelType}";
         }
+
+        public override bool CompareWith(string keyword)
+        {
+            if (base.CompareWith(keyword) || FuelType.ToString() == keyword)
+                return true;
+
+            return false;
+        }
     }
 }
 

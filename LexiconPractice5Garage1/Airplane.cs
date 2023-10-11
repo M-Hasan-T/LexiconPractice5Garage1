@@ -18,5 +18,13 @@ namespace LexiconPractice5Garage1
         {
             return $"{base.ToString()}\nNumber of Engines: {NumberOfEngines}";
         }
+
+        public override bool CompareWith(string keyword)
+        {
+            if (base.CompareWith(keyword) || NumberOfEngines.ToString() == keyword)
+                return true;
+
+            return false;
+        }
     }
 }

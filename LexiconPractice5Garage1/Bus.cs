@@ -17,5 +17,13 @@
         {
             return $"{base.ToString()}\nNumber of Seats: {NumberOfSeats}";
         }
+
+        public override bool CompareWith(string keyword)
+        {
+            if (base.CompareWith(keyword) || NumberOfSeats.ToString() == keyword)
+                return true;
+
+            return false;
+        }
     }
 }

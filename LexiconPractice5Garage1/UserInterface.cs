@@ -351,10 +351,9 @@ namespace LexiconPractice5Garage1
             string regNum;
             int wheelCount = 0;
             string color;
-            bool verifyRegistrationNumber = false;
-
             Console.Clear();
             Console.WriteLine("Enter details about the vehicle");
+            bool verifyRegistrationNumber;
             do
             {
                 Console.Write("Registration number: ");

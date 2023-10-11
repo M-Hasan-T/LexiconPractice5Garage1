@@ -17,5 +17,13 @@
         {
             return $"{base.ToString()}\nLength: {Length}";
         }
+
+        public override bool CompareWith(string keyword)
+        {
+            if (base.CompareWith(keyword) || Length.ToString() == keyword)
+                return true;
+
+            return false;
+        }
     }
 }
